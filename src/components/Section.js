@@ -12,8 +12,8 @@ function Section({ title, description, backgroundImg, leftBtnText, rightBtnText 
                 </ItemText>
             </Fade>
             
-            <Fade bottom>
-                <Buttons>
+            <Buttons>
+                <Fade bottom>
                     <ButtonGroup>
                         <LeftButton>
                             { leftBtnText }
@@ -24,10 +24,10 @@ function Section({ title, description, backgroundImg, leftBtnText, rightBtnText 
                             </RightButton>
                         }
                     </ButtonGroup>
+                </Fade>
 
-                    <DownArrow src="/images/down-arrow.svg" />
-                </Buttons>
-            </Fade>
+                <DownArrow src="/images/down-arrow.svg" />
+            </Buttons>
         </Wrap>
     )
 }
@@ -35,6 +35,7 @@ function Section({ title, description, backgroundImg, leftBtnText, rightBtnText 
 export default Section
 
 const Wrap = styled.div`
+    z-index: 10;
     width: 100vw;
     height: 100vh;
     background-size: cover;
@@ -43,6 +44,7 @@ const Wrap = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
     background-image: ${props => `url("/images/${props.bgImage}")`};
 `;
 
